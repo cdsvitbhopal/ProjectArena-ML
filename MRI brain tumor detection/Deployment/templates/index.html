@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Upload Form</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="navbar">
+    <a href="https://github.com/restlesshornet/MRI-Brain-Tumor-Diagnosis/">Github</a>
+  </div>
+  
+  <div class="form-container">
+    <h1>Image Upload Form</h1>
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="image">Select an image:</label>
+        <input type="file" name="image" accept="image/*" required>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Upload and Predict">
+      </div>
+    </form>
+  </div>
+</body>
+</html>
