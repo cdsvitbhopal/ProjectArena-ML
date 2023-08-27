@@ -1,0 +1,42 @@
+Credit Card Fraud Detection by Rishav Bhardwaz 22MEI10023
+Introduction
+This project focuses on using machine learning to tackle the escalating issue of credit card fraud. By harnessing the capabilities of ML, we aim to build a robust system that can effectively identify and prevent fraudulent transactions, ensuring the security of both consumers and financial institutions. Through advanced techniques like anomaly detection and supervised learning, we aim to develop a predictive model that can accurately differentiate between legitimate and fraudulent transactions. This project holds the potential to enhance the safety of credit card transactions, ultimately reducing financial losses and bolstering consumer trust.
+
+Content
+The datasets contains transactions made by credit cards by european cardholders. This dataset presents transactions, where we have 52 frauds out of 11906 transactions.
+
+It contains only numerical input variables which are the result of a PCA transformation. Unfortunately, due to confidentiality issues, we cannot provide the original features and more background information about the data. Features V1, V2, ... V28 are the principal components obtained with PCA, the only features which have not been transformed with PCA are 'Time' and 'Amount'. Feature 'Time' contains the seconds elapsed between each transaction and the first transaction in the dataset. The feature 'Amount' is the transaction Amount, this feature can be used for example-dependant cost-senstive learning. Feature 'Class' is the response variable and it takes value 1 in case of fraud and 0 otherwise.
+
+Inspiration
+In the realm of credit card fraud detection, the convergence of technology and vigilance fuels our drive to create a safer financial landscape. The ever-evolving tactics of fraudsters challenge us to innovate and adapt, forging ahead with machine learning as our shield. With each line of code and every algorithm fine-tuned, we inch closer to a future where transactions are secure, losses are minimized, and trust reigns supreme. This journey isn't just about data points and models; it's about safeguarding the hard-earned money and aspirations of individuals worldwide. The inspiration lies in knowing that our efforts contribute to a world where digital transactions can occur without fear, empowering individuals and businesses to thrive without compromise.
+
+Acknowledgements
+The dataset has been taken from MLG Group.
+
+Model Prediction
+Through the intricate web of data analysis and machine learning, our model stands ready to unveil its predictive prowess. Equipped with the ability to decipher patterns and anomalies, it will accurately discern between legitimate transactions and fraudulent attempts. As each new transaction flows through its virtual veins, the model's algorithms will tirelessly compare it to its learned knowledge, swiftly flagging suspicious activity that might otherwise remain hidden. With every successful prediction, the model reaffirms its role in fortifying financial security, thwarting fraudsters, and nurturing the trust that underpins modern commerce.
+
+Isolation Forest Algorithm :
+One of the newest techniques to detect anomalies is called Isolation Forests. The algorithm is based on the fact that anomalies are data points that are few and different. As a result of these properties, anomalies are susceptible to a mechanism called isolation.
+
+This method is highly useful and is fundamentally different from all existing methods. It introduces the use of isolation as a more effective and efficient means to detect anomalies than the commonly used basic distance and density measures. Moreover, this method is an algorithm with a low linear time complexity and a small memory requirement. It builds a good performing model with a small number of trees using small sub-samples of fixed size, regardless of the size of a data set.
+
+Typical machine learning methods tend to work better when the patterns they try to learn are balanced, meaning the same amount of good and bad behaviors are present in the dataset.
+
+How Isolation Forests Work
+The Isolation Forest algorithm isolates observations by randomly selecting a feature and then randomly selecting a split value between the maximum and minimum values of the selected feature. The logic argument goes: isolating anomaly observations is easier because only a few conditions are needed to separate those cases from the normal observations. On the other hand, isolating normal observations require more conditions. Therefore, an anomaly score can be calculated as the number of conditions required to separate a given observation.
+
+The way that the algorithm constructs the separation is by first creating isolation trees, or random decision trees. Then, the score is calculated as the path length to isolate the observation.
+
+Local Outlier Factor(LOF) Algorithm
+The LOF algorithm is an unsupervised outlier detection method which computes the local density deviation of a given data point with respect to its neighbors. It considers as outlier samples that have a substantially lower density than their neighbors.
+
+The number of neighbors considered, (parameter n_neighbors) is typically chosen 1) greater than the minimum number of objects a cluster has to contain, so that other objects can be local outliers relative to this cluster, and 2) smaller than the maximum number of close by objects that can potentially be local outliers. In practice, such informations are generally not available, and taking n_neighbors=20 appears to work well in general.
+
+Observations :
+Isolation Forest detected 11 errors versus Local Outlier Factor detecting 17 errors vs. SVM detecting 503 errors
+Isolation Forest has a 99.08% more accurate than LOF of 98.57% and SVM of 57.94%
+When comparing error precision & recall for 3 models , the Isolation Forest performed much better than the LOF as we can see that the detection of fraud cases is around 38 % versus LOF detection rate of just 0 % and SVM of 0%.
+We can also improve on this accuracy by increasing the sample size or use deep learning algorithms however at the cost of computational expense.We can also use complex anomaly detection models to get better accuracy in determining more fraudulent cases
+Conclusion:
+This project showcases the potent synergy of machine learning and data analysis in fortifying credit card fraud detection. By crafting a robust model capable of distinguishing genuine transactions from fraudulent ones, we've illuminated a path to enhanced financial security and renewed trust in digital transactions. As this chapter concludes, it urges us to persistently innovate, ensuring our defenses remain ahead of evolving fraud tactics. Ultimately, this endeavor symbolizes our dedication to fostering a realm of secure and trustworthy financial interactions.
