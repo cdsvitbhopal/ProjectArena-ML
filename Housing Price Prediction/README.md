@@ -1,6 +1,6 @@
 #Housing Price Prediction Model
 
-Welcome to the Housing Price Prediction model, based on the techniques discussed in the book "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow". This machine learning model is designed to predict housing prices using a dataset of various features related to houses. Whether you're a beginner or an experienced practitioner, this project serves as a great starting point to delve into machine learning for real estate.
+Welcome to the Housing Price Prediction model. This machine learning model is designed to predict housing prices using a dataset of various features related to houses. Whether you're a beginner or an experienced practitioner, this project serves as a great starting point to delve into machine learning for real estate.
 
 #Usage Guide
 - Once the setup is complete, you can use the Housing Price Prediction model with ease:
