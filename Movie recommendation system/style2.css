@@ -1,0 +1,109 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 15px 30px;
+    font-size: 17 px;
+    padding: 8 px;
+}
+.container{
+    background-color: #f2f2f2;
+    padding: 15px 20px 15px 20px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+}
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="date"],
+select
+textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+fieldset{
+    background-color: #fff;
+    border: 1px #ccc;
+    border-radius: 4px;
+}
+
+.main_heading{
+    text-align: center;
+}
+
+
+/*.centre [type="submit"]{
+    background-color: lightgreen;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 30%;
+    transition: width 2s, height 2s, border-radius 4s,background 4s;
+}
+
+.centre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centre:hover [type="submit"]{
+    width: 100%;
+    border-radius: 4px; 
+    background-color: green;
+}*/
+
+/*Submit button variant*/
+
+.centre [type="submit"]{
+    background-color: pink;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor:progress;
+    width: 30%;
+    transition: width 2s, height 2s, border-radius 4s,background 2s;
+}
+
+.centre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centre:hover [type="submit"]{
+    width: 100%;
+    border-radius: 4px; 
+    background-color: green;
+    color: white;
+    padding: 12px 20px;
+    border: 2px solid green;
+}
+
+.mains{
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: inherit;
+    background-image: url('Untitled design.png');
+    background-size: cover;
+    background-position: center;
+    padding: 40px;
+}
+
+.main_heading h1{
+    opacity: 1;
+    outline: 2px solid #000;
+    /* add a 2px solid black border around the text */
+    padding: 10px;
+}
+.about, .footer{
+    text-align: center;
+}
