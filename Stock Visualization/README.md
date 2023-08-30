@@ -112,6 +112,31 @@ Now we can already plot the chart and show it in the browser (line 12) and it lo
 
 > If we compare the chart from Plotly with the charts from Tradingview, it is really accurate.
 
+## Deploy using Voila
+
+What is **Voila**?
+
+> Voila is a Python package that turns Jupyter notebooks into working web sites. It is pretty amazing. Another Python package called Streamlit turns .py-files into websites. Voila does the same that Streamlit does to .py-files, except for Jupyter notebooks.  
+> Take a look at [Voila documentation](https://voila.readthedocs.io/en/stable/)
+
+To use voila first you need to install.
+
+You can install these dependencies using the following commands:
+
+```python
+ pip install voila
+```
+
+#### Test Voila locally
+
+Type the command below into a terminal to run the app locally.
+
+```
+voila finance.ipynb
+```
+
+> You can acess your app running on **localhost:8866**
+
 ## Conclusion
 
 By following these steps, you can visualize stock market data using Python and the Plotly library. This example demonstrated how to create a candlestick chart using data fetched from the yfinance API. Feel free to explore further and customize the visualization based on your requirements.
