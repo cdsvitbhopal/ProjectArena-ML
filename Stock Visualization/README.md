@@ -71,13 +71,13 @@ It takes three arguments:
 - an interval (optional)
 
 ```python
-data = yf.download(tickers='TSLA', period='1d', interval='1m')
+data = yf.download(tickers='AAPL', period='1d', interval='1m')
 print(data)
 ```
 
 It will render the output like this
 
-![plot-chart](./app/apple.jpeg)
+![plot-chart](/apple.jpeg)
 
 ## Visualization With Python Plotly
 
@@ -108,7 +108,7 @@ fig.show()
 
 Now we can already plot the chart and show it in the browser (line 12) and it looks great
 
-![plot-chart](./app/newplot.png)
+![plot-chart](/newplot.png)
 
 > If we compare the chart from Plotly with the charts from Tradingview, it is really accurate.
 
