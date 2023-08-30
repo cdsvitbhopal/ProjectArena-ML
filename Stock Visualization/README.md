@@ -77,7 +77,7 @@ print(data)
 
 It will render the output like this
 
-![plot-chart](apple.jpeg)
+![plot-chart](./app/apple.jpeg)
 
 ## Visualization With Python Plotly
 
@@ -108,11 +108,10 @@ fig.show()
 
 Now we can already plot the chart and show it in the browser (line 12) and it looks great
 
-![plot-chart](newplot.png)
+![plot-chart](./app/newplot.png)
 
 > If we compare the chart from Plotly with the charts from Tradingview, it is really accurate.
 
 ## Conclusion
 
 By following these steps, you can visualize stock market data using Python and the Plotly library. This example demonstrated how to create a candlestick chart using data fetched from the yfinance API. Feel free to explore further and customize the visualization based on your requirements.
-
