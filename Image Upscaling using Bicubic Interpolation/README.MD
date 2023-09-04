@@ -43,5 +43,5 @@ Here is the algorithm of my script:
 Corner and edge pixels do not have a 4x4 neighborhood so I interpolated their values using the nearest neighbor method which involves setting their value to the that of the nearest known pixel but other techniques like clamping, mirroring and wrapping can be used to interpolate their values.
 
 ### Improvements:
-This was a quick implementation of the bicubic interpolation method for image upscaling so there is definitely massive room for improvements such as generalizing the code to accept different image resolutions as well as different scaling factors, parallelization since operations can definitely be parallelized for efficient creation of upscaled images and general code optimization for increased adherence to DRY.
+This was a quick implementation of the bicubic interpolation method for image upscaling so there is definitely massive room for improvements such as generalizing the code to accept different image resolutions as well as different scaling factors, parallelization since operations can definitely be parallelized for efficient creation of upscaled images and general code optimization for increased adherence to the DRY principle.
 
