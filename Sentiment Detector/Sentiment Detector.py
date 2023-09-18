@@ -6,6 +6,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
+from collections import Counter
 
 # Load the dataset
 data = pd.read_csv("/content/drive/MyDrive/IMDB Dataset.csv")
@@ -15,13 +16,13 @@ def preprocess_text(text):
     # Replace '<br />' with a space
     text = text.replace('<br />', ' ')
 
-    # Split the text into words
-    words = text.split()
+    # Count occurrences of each word
+    word_counts = Counter(text.split())
 
     # Filter out stopwords and other common words that do not contribute much to sentiment
     stopwords = set(STOPWORDS)
     additional_stopwords = set(['movie', 'film'])  # Custom stopwords
-    filtered_words = [word for word in words if word.lower() not in stopwords and word.lower() not in additional_stopwords]
+    filtered_words = [word for word in word_counts if word.lower() not in stopwords and word.lower() not in additional_stopwords]
 
     return " ".join(filtered_words)
 
