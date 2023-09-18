@@ -1,41 +1,63 @@
 import numpy as np
 import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.feature_extraction.text import CountVectorizer
+import matplotlib.pyplot as plt
+from wordcloud import WordCloud, STOPWORDS
+from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
-# Load the IMDb movie reviews dataset
-data = pd.read_csv('imdb_dataset.csv')
+# Load the dataset
+data = pd.read_csv("/content/drive/MyDrive/IMDB Dataset.csv")
 
-# Split the dataset into training and testing sets
-train_data, test_data, train_labels, test_labels = train_test_split(data['review'], data['sentiment'], test_size=0.2, random_state=42)
+# Data preprocessing: Split words, filter stopwords, and remove 'br'
+def preprocess_text(text):
+    # Replace '<br />' with a space
+    text = text.replace('<br />', ' ')
 
-# Initialize CountVectorizer to convert text into numerical features
-vectorizer = CountVectorizer()
+    # Split the text into words
+    words = text.split()
 
-# Fit the vectorizer on the training data and transform the training data
-train_features = vectorizer.fit_transform(train_data)
+    # Filter out stopwords and other common words that do not contribute much to sentiment
+    stopwords = set(STOPWORDS)
+    additional_stopwords = set(['movie', 'film'])  # Custom stopwords
+    filtered_words = [word for word in words if word.lower() not in stopwords and word.lower() not in additional_stopwords]
 
-# Transform the testing data using the fitted vectorizer
-test_features = vectorizer.transform(test_data)
+    return " ".join(filtered_words)
 
-# Initialize and train a logistic regression model
-model = LogisticRegression()
-model.fit(train_features, train_labels)
+data['review'] = data['review'].apply(preprocess_text)
+
+# Check class distribution
+sentiment_counts = data['sentiment'].value_counts()
+print(sentiment_counts)
+
+# Split data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(data['review'], data['sentiment'], test_size=0.2, random_state=42)
+
+# Initialize TfidfVectorizer to convert text into numerical features
+vectorizer = TfidfVectorizer()
+
+# Fit the vectorizer on the training data and transform both training and testing data
+X_train_features = vectorizer.fit_transform(X_train)
+X_test_features = vectorizer.transform(X_test)
+
+# Initialize and train a logistic regression model with increased max_iter and regularization
+model = LogisticRegression(max_iter=2000, solver='liblinear', penalty='l2')
+model.fit(X_train_features, y_train)
 
 # Make predictions on the testing data
-predictions = model.predict(test_features)
+y_pred = model.predict(X_test_features)
 
-# Calculate accuracy score
-accuracy = accuracy_score(test_labels, predictions)
-print(f"Accuracy: {accuracy}")
+# Calculate accuracy on the testing data
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Model Accuracy: {accuracy:.2f}")
 
-# Test the model on new data
-new_reviews = ["This movie was fantastic!", "I didn't like the acting in this film."]
-new_features = vectorizer.transform(new_reviews)
-new_predictions = model.predict(new_features)
-
-for review, prediction in zip(new_reviews, new_predictions):
-    print(f"Review: {review}")
-    print(f"Sentiment: {'Positive' if prediction == 1 else 'Negative'}\n")
+# Sentiment Analysis Loop
+while True:
+    user_input = input("Enter a movie review (or type 'exit' to quit): ")
+    if user_input.lower() == 'exit':
+        break
+    cleaned_input = preprocess_text(user_input)
+    input_features = vectorizer.transform([cleaned_input])
+    sentiment = model.predict(input_features)[0]
+    print(f"Sentiment: {'Positive' if sentiment == 'positive' else 'Negative'}\n")
