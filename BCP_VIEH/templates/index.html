@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Breast Cancer Prediction</title>
+</head>
+<body>
+        <div class="title">
+            <h1 style="color: rgb(223, 32, 32);">Breast Cancer Predictor</h1>
+        </div>
+        <div class="forms">
+            <form action="/predict" method="POST">
+                <br><br><br><br><br><br><br><br>
+                <input type="number" placeholder="Radius mean" name="rmean" id="i1" required step="any"><br><br><br>
+                <input type="number" placeholder="Texture mean" name="tmean" id="i2" required step="any"><br><br><br>
+                <input type="number" placeholder="Smoothness mean" name="smmean" id="i3" required step="any"><br><br><br>
+                <input type="number" placeholder="Compactness mean" name="cmean" id="i4" required step="any"><br><br><br>
+                <input type="number" placeholder="Symmetry mean" name="symean" id="i5" required step="any"><br><br><br>
+                <input type="number" placeholder="Fractal Dimension mean" name="fdmean" id="i6" required step="any"><br><br><br>
+                <input type="number" placeholder="Texture SE" name="tse" id="i7" required step="any"><br><br><br>
+                <input type="number" placeholder="Smoothness SE" name="smse" id="i8" required step="any"><br><br><br>
+                <input type="number" placeholder="Symmetry SE" name="syse" id="i9" required step="any"><br><br><br>
+                <input type="number" placeholder="Symmetry Worst" name="sywt" id="i10" required step="any"><br><br><br><br><br>
+                <button name="submit">Predict</button>  <br><br><br>
+            </form>
+            <div class="res">
+                {% if p==1 %}
+                <div class="malignant">
+                    <br><h1 style="color: white;">Patient has <span style="color:red;">Malignant</span> type of Cancer</h1>
+                </div>
+                {% elif p==0 %}
+                <div class="benign">  
+                    <br><h1 style="color: whi;">Patient has <span style="color:red;">Benign</span> type of Cancer</h1>
+                </div>       
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+
+    <!--bootom navigation bar-->
+    <div class="bottom_nav">
+        <div class="follow">
+            <h3>FOLLOW ME ON</h3>
+        </div>
+        <div class="icons">
+            <a href="https://www.facebook.com/sarthak.wakchaure.737/" target="_blank" rel="noopener noreferrer" aria-label="fbk"><i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com/SarthakWakchau3" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter" aria-label="twt"></i></a>
+            <a href="https://www.linkedin.com/in/sarthak-wakchaure-54653b211?lipi=urn%3Ali%3Apage%3Ad_flagship3
+               _profile_view_base_contact_details%3BbH5LmB1ARgKchLZpfvlgVg%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="lin"><i class="fa fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/?hl=en" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram" aria-label="ins"></i></a>
+            </div>
+        <div class="my_create">
+            <br><h3>PROJECT BY</h3>
+            <h4>Sarthak Wakchaure !</h4>
+            <div class="contact_me">
+                <h4>Mobile:- 9850852297</h4>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
