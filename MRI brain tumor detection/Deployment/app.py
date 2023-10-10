@@ -5,14 +5,16 @@ import tensorflow as tf
 from PIL import Image
 import io
 import base64
-import markdown
 
-model = tf.keras.models.load_model('check.h5')
+def load_model_and_labels():
+    model = tf.keras.models.load_model('check.h5')
+    class_labels = ['Glioma', 'Meningioma', 'No tumor', 'Pituitary']
+    return model, class_labels
 
 def preprocess_image(img):
-    img = img.resize((150, 150))  # Resize the image to match the input size of your model
-    img = tf.keras.preprocessing.image.img_to_array(img)  # Convert image to numpy array# Normalize the pixel values
-    img = np.expand_dims(img, axis=0)  # Add an extra dimension (batch dimension)
+    img = img.resize((150, 150))  
+    img = tf.keras.preprocessing.image.img_to_array(img)
+    img = np.expand_dims(img, axis=0)  
     return img
 
 def image_to_base64(img):
@@ -22,37 +24,25 @@ def image_to_base64(img):
     return img_str
 
 app = Flask(__name__)
+model, class_labels = load_model_and_labels()
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
-
 @app.route('/predict', methods=['POST'])
 def predict():
-    if request.method == 'POST':
-        # Get the uploaded image from the form data
+    try:
         image = request.files['image']
-
         img = Image.open(image.stream)
-    
-    # Preprocess the image
         img = preprocess_image(img)
-    
-        # Perform the prediction
         predictions = model.predict(img)
-
-        # Get the predicted class label
         predicted_class = np.argmax(predictions)
-        print(predicted_class)
-        class_labels = ['Glioma', 'Meningioma','No tumor', 'Pituitary']  # Define your class labels
         predicted_label = class_labels[predicted_class]
-        
         img_base64 = image_to_base64(Image.open(image.stream))
-    
-    return render_template('result.html', description=predicted_label, image_data=img_base64)
-
-
+        return render_template('result.html', description=predicted_label, image_data=img_base64)
+    except Exception as e:
+        return render_template('error.html', error_message=str(e))
 
 if __name__ == '__main__':
     app.run(debug=True)
