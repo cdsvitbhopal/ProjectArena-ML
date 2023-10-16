@@ -31,8 +31,8 @@ The project's code is organized into the following directories:
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/soybean-leaf-classification.git
-   cd soybean-leaf-classification
+   git clone https://github.com/cdsvitbhopal/ProjectArena-ML/
+   cd ProjectArena-ML\Project2_SoybeanLeafClassification
    ```
 
 2. Obtain the SoyNet dataset and structure it as described in the "Dataset" section. Place it in the `data` directory.
