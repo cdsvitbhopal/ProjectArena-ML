@@ -22,11 +22,8 @@ EfficientNet is a family of convolutional neural network architectures that are 
 
 The project's code is organized into the following directories:
 
-- **data**: This directory should contain the SoyNet dataset, organized into subdirectories for training, validation, and testing.
-- **models**: This directory contains the implementation of the EfficientNet model used for classification.
-- **notebooks**: This directory includes Jupyter notebooks for various stages of the project, including data preprocessing, model training, and evaluation.
-- **scripts**: Any utility scripts or additional code snippets required for the project can be placed here.
-- **results**: After training the model, this directory will store model checkpoints and evaluation results.
+- **requirements.txt** file that highlights all necessary dependencies
+- **.ipynb file**
 
 ## Getting Started
 
