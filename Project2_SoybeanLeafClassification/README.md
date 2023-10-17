@@ -18,23 +18,21 @@ Please note that this dataset is not publicly available in this repository, and 
 
 EfficientNet is a family of convolutional neural network architectures that are known for their excellent performance and efficiency. These models have been widely used for various computer vision tasks due to their ability to achieve high accuracy with relatively fewer parameters compared to traditional CNN architectures. In this project, the EfficientNet model was utilized as the backbone for soybean leaf classification.
 
+
 ## Code Structure
 
 The project's code is organized into the following directories:
 
-- **data**: This directory should contain the SoyNet dataset, organized into subdirectories for training, validation, and testing.
-- **models**: This directory contains the implementation of the EfficientNet model used for classification.
-- **notebooks**: This directory includes Jupyter notebooks for various stages of the project, including data preprocessing, model training, and evaluation.
-- **scripts**: Any utility scripts or additional code snippets required for the project can be placed here.
-- **results**: After training the model, this directory will store model checkpoints and evaluation results.
+- **requirements.txt** file that highlights all necessary dependencies
+- **.ipynb file**
 
 ## Getting Started
 
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/soybean-leaf-classification.git
-   cd soybean-leaf-classification
+   git clone https://github.com/cdsvitbhopal/ProjectArena-ML/
+   cd ProjectArena-ML\Project2_SoybeanLeafClassification
    ```
 
 2. Obtain the SoyNet dataset and structure it as described in the "Dataset" section. Place it in the `data` directory.
@@ -51,7 +49,11 @@ The project's code is organized into the following directories:
 
 ## Results
 
-The project achieved a test set accuracy of 93%, demonstrating the effectiveness of the EfficientNet model for soybean leaf classification. Detailed evaluation metrics, including confusion matrices and classification reports, can be found in the project's notebooks and results directory.
+The project achieved a test set accuracy of 95%, demonstrating the effectiveness of the EfficientNet model for soybean leaf classification. Detailed evaluation metrics, including confusion matrices and classification reports, can be found in the project's notebooks and results directory.
+
+![image](https://github.com/papichoolo/ProjectArena-ML/assets/63441604/2bb3de23-1fc9-42e9-8f07-4f94b7ecd872)  
+![Test Set](https://github.com/papichoolo/ProjectArena-ML/assets/63441604/910c0023-76f2-4cb7-a23b-efcea94db2f4)
+
 
 ## Conclusion
 
