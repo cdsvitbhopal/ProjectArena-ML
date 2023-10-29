@@ -17,3 +17,14 @@ Model takes in factors such as lead times, type of room reserved, average cost o
 - **Pandas**
 - **XGBoost**
 - **Streamlit**
+
+## Run
+Make sure to have Streamlit installed
+
+1) Navigate to project directory.
+
+`cd "Hotel Reservation Cancellation Prediction"`
+
+2) Run the following command:
+
+`streamlit run deploy.py`
