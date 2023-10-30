@@ -23,7 +23,7 @@ Iris Dataset is available in-built in R studio
 
 ## ML ALGORITHM
 
-- Used Desision Tree Classifier 
+- Used Decision Tree Classifier 
 - Identified redundant and less used branches
 - Pruned Tree to make it less complex and the boost the speed of classification
 
