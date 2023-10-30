@@ -1,0 +1,174 @@
+body
+{
+    text-align: center;
+    margin: 0;
+}
+
+body
+{
+background-image:url("https://th.bing.com/th/id/R.3a5fc820cbdd03665c95456137b7f5b2?rik=Kh1adSuYRExRGA&riu=http%3a%2f%2fwww.worldatlas.com%2fr%2fw728-h425-c728x425%2fupload%2f5b%2fdf%2f32%2fshutterstock-523759291.jpg&ehk=32iAt7UutRpLpR9gXPyM%2bNVIxRKnuyVOypJwv9psa5Q%3d&risl=&pid=ImgRaw&r=0");
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+
+}
+
+.title 
+{
+    width: 100%;
+    text-align: center;
+    position:absolute;
+    padding-top:15px;
+}
+
+.forms
+{
+    width: 100%;
+    text-align: center;
+}
+
+.forms input
+{
+    border-radius: 13px;
+    height: 30px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+.forms button
+{
+    
+    background-color: #be2722;
+    color: white;
+    border-radius: 20px;
+    height: 40px;
+    width: 150px;
+    font-size: medium;
+    border-color: #e2dddc;
+    border: #f3efed;
+    text-align: center;
+    
+}
+
+.forms button:hover
+{
+    cursor: pointer;
+    background-color: #e21a1a;
+    border-color: #f5eeee;
+    border: #f3eded;
+}
+
+#i1
+{
+    text-align: center;
+}
+
+#i2
+{
+    text-align: center;
+}
+
+#i3
+{
+    text-align: center;
+}
+
+#i4
+{
+    text-align: center;
+}
+
+#i5
+{
+    text-align: center;
+}
+
+#i6
+{
+    text-align: center;
+}
+
+#i7
+{
+    text-align: center;
+}
+
+#i8
+{
+    text-align: center;
+}
+
+#i9
+{
+    text-align: center;
+}
+
+#i10
+{
+    text-align: center;
+}
+
+
+
+
+.bottom_nav
+{
+    width: 100%;
+    background-color: rgb(214, 224, 231);
+    border: 2px solid black;
+    padding-left: 1.1px;
+}
+
+
+.fa 
+{  
+    padding: 7px;  
+    text-align: center;  
+    margin: 3px 28px;  
+    font-size: 10px;  
+    width: 20px; 
+    border-radius: 10px; 
+} 
+
+
+.fa-facebook 
+{  
+    background: #3b5998;  
+    color: white;  
+    left: 290px;
+}  
+
+.fa-twitter 
+{  
+    background: #2a8dd8;  
+    color: white; 
+    left: 377px;
+}  
+ 
+.fa-linkedin 
+{  
+    background: #007bb5;  
+    color: white;  
+    left: 464px;
+}  
+
+.fa-instagram {  
+    background: #ff006a;  
+    color: white; 
+    left: 551px; 
+}  
+
+
+.res 
+{
+    color: white;
+    text-align: center;
+}
+
+
